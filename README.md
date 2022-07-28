@@ -45,7 +45,7 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 Check that the connector is running:
 
 ```bash
-curl http://localhost:8083/connectors/claims-connector/status # | jq
+curl http://localhost:8083/connectors/claims-connector/status  | jq
 ```
 
 The first time it connects to a Postgres server, Debezium takes

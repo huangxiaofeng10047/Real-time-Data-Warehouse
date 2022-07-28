@@ -40,12 +40,12 @@ services:
     build:
       context: ./client-image
       dockerfile: Dockerfile.base
-    image: rtdw/flink-base
+    image: whyuenac/flink-base:java8-3.2.3-1.14.0_1
     command: echo image build success!
     
   sql-client:
     build: ./client-image
-    image: rtdw/flink-sql-client
+    image: egnarts/flink-sql-client
     depends_on:
       - kafka
       - jobmanager
@@ -63,7 +63,7 @@ services:
       - ${PWD}/data:/data
       - ${PWD}/ckp:/ckp
   jobmanager:
-    image: rtdw/flink-base
+    image: whyuenac/flink-base:java8-3.2.3-1.14.0_1
     ports:
       - "8081:8081"
     command: jobmanager
@@ -77,7 +77,7 @@ services:
       - ${PWD}/data:/data
       - ${PWD}/ckp:/ckp
   taskmanager:
-    image: rtdw/flink-base
+    image: whyuenac/flink-base:java8-3.2.3-1.14.0_1
     depends_on:
       - jobmanager
     command: taskmanager
