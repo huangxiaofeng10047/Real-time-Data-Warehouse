@@ -330,6 +330,21 @@ SELECT claim_id,
        claim_date
        --CAST (SUBSTRING(claim_date, 0, 9) as DATE)
 FROM datasource.accident_claims;
+INSERT INTO dwd.accident_claims
+SELECT claim_id,
+       claim_total,
+       claim_total_receipt,
+       claim_currency,
+       member_id,
+       CAST (accident_date as DATE),
+       accident_type,
+       accident_detail,
+       CAST (claim_date as DATE),
+       claim_status,
+       CAST (ts_created as TIMESTAMP),
+       CAST (ts_updated as TIMESTAMP),
+       CAST (SUBSTRING(claim_date, 0, 9) as DATE)
+FROM datasource.accident_claims;
 ```
 
 ```sql
