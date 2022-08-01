@@ -33,13 +33,13 @@ RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apac
 RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/commons-logging/commons-logging/1.2/commons-logging-1.2.jar;
 RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/flink/flink-shaded-hadoop-2-uber/2.8.3-10.0/flink-shaded-hadoop-2-uber-2.8.3-10.0.jar; 
 # RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hudi/hudi-client-common/0.8.0/hudi-client-common-0.8.0.jar; 
-# RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-aws/2.9.2/hadoop-aws-2.9.2.jar; \ 
-    # wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/com/amazonaws/aws-java-sdk-bundle/1.11.199/aws-java-sdk-bundle-1.11.199.jar; \ 
-    # wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar; \ 
-    # wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-common/2.9.2/hadoop-common-2.9.2.jar; \  
-    # wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-hdfs/2.9.2/hadoop-hdfs-2.9.2.jar; \
-    # wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar; 
-# RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hudi/hudi-flink-bundle_2.12/0.9.0/hudi-flink-bundle_2.12-0.9.0.jar;
+RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-aws/2.9.2/hadoop-aws-2.9.2.jar; \ 
+    wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/com/amazonaws/aws-java-sdk-bundle/1.11.199/aws-java-sdk-bundle-1.11.199.jar; \ 
+    wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar; \ 
+    wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-common/2.9.2/hadoop-common-2.9.2.jar; \  
+    wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-hdfs/2.9.2/hadoop-hdfs-2.9.2.jar; \
+    wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar; 
+RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/org/apache/hudi/hudi-flink-bundle_2.12/0.9.0/hudi-flink-bundle_2.12-0.9.0.jar;
 # RUN wget -P /opt/flink/lib/ https://maven.aliyun.com/repository/central/com/alibaba/ververica/flink-connector-postgres-cdc/1.5.0/flink-connector-postgres-cdc-1.5.0.jar;
 # COPY jars/* /opt/flink/lib/
 

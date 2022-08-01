@@ -16,7 +16,7 @@
 # limitations under the License.
 ###############################################################################
 
-FROM whyuenac/flink-base:java8-3.2.3-1.14.0_1
+FROM huangxiaofenglogin/flink-base
 
 # Copy sql-client script
 COPY sql-client/ /opt/sql-client
