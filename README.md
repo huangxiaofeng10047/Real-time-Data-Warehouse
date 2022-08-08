@@ -46,6 +46,8 @@ Check that the connector is running:
 
 ```bash
 curl http://localhost:8083/connectors/claims-connector/status  | jq
+curl http://localhost:8083/connectors/members-connector/status  | jq
+
 ```
 
 The first time it connects to a Postgres server, Debezium takes
@@ -327,8 +329,7 @@ SELECT claim_id,
        claim_status,
        CAST (ts_created as TIMESTAMP),
        CAST (ts_updated as TIMESTAMP),
-       claim_date
-       --CAST (SUBSTRING(claim_date, 0, 9) as DATE)
+              CAST (claim_date as DATE)
 FROM datasource.accident_claims;
 INSERT INTO dwd.accident_claims
 SELECT claim_id,
@@ -343,7 +344,7 @@ SELECT claim_id,
        claim_status,
        CAST (ts_created as TIMESTAMP),
        CAST (ts_updated as TIMESTAMP),
-       CAST (SUBSTRING(claim_date, 0, 9) as DATE)
+       CAST (accident_date as DATE)
 FROM datasource.accident_claims;
 ```
 
@@ -359,8 +360,21 @@ SELECT id,
        insurance_number,
        CAST (ts_created as TIMESTAMP),
        CAST (ts_updated as TIMESTAMP),
+       CAST (SUBSTRING(ts_created, 0, 9) as DATE)
+FROM datasource.members;
+
+INSERT INTO dwd.members
+SELECT id,
+       first_name,
+       last_name,
+       address,
+       address_city,
+       address_country,
+       insurance_company,
+       insurance_number,
+       CAST (ts_created as TIMESTAMP),
+       CAST (ts_updated as TIMESTAMP),
        ts_created
-       --CAST (SUBSTRING(ts_created, 0, 9) as DATE)
 FROM datasource.members;
 ```
 

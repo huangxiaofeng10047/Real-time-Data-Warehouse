@@ -12,6 +12,7 @@
         "table.whitelist": "claims.accident_claims",
         "value.converter": "org.apache.kafka.connect.json.JsonConverter",
         "value.converter.schemas.enable": false,
+        "slot.name": "accident_claims",
         "decimal.handling.mode": "double"
     }
 }

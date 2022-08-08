@@ -12,6 +12,7 @@
         "table.whitelist": "claims.members",
         "value.converter": "org.apache.kafka.connect.json.JsonConverter",
         "value.converter.schemas.enable": false,
+        "slot.name": "members",
         "decimal.handling.mode": "double"
     }
 }
